@@ -2,19 +2,6 @@ if true then
   return {}
 end
 return {
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -34,6 +21,8 @@ return {
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
+        pyright = {},
+        nixd = {},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
