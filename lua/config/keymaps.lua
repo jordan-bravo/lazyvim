@@ -4,3 +4,4 @@
 
 -- Unset "Alt o" so it can be used by Zellij to enter Session mode
 vim.keymap.set({ "n", "i", "v" }, "<M-s>", "<Nop>")
+vim.keymap.set("n", "<leader>k", ":bd<CR>")
