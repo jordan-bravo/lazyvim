@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
