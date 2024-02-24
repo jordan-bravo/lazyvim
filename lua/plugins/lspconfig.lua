@@ -1,6 +1,11 @@
 return {
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
+    -- disable mason since we use Nix to install packages
+    { "williamboman/mason-lspconfig.nvim", enabled = false },
+    { "williamboman/mason.nvim", enabled = false },
+    { "mason-nvim-dap.nvim", enabled = false },
+
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
