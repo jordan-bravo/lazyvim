@@ -3,7 +3,6 @@
 ## TODO
 
 ### High Level
- - [ ] Attempting to access registers (either via the " key or by typing :reg) causes nvim to lock up, only can escape with ctrl+c
 
 ### Low level
 
