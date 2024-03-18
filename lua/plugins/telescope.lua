@@ -3,7 +3,8 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       -- change a keymap
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+      { "<leader>j", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+      { "<leader>k", "<cmd>Telescope live_grep<cr>", desc = "Find Files" },
       -- add a keymap to browse plugin files
       {
         "<leader>fp",
