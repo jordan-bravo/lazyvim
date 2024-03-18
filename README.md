@@ -3,6 +3,7 @@
 ## TODO
 
 ### High Level
+- [ ] Add search and replace across multiple files (probably plugin: nvim spectre)
 
 ### Low level
 - [ ] Errors on startup: `nvim-dap-python` and `nvim-dap`
