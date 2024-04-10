@@ -1,13 +1,20 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    -- add telescope-fzf-native
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
     keys = {
       -- change a keymap
       { "<leader>j", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>k", "<cmd>Telescope live_grep<cr>", desc = "Find Files" },
       -- add a keymap to browse plugin files
-      -- { ["<c-j>"] = require("telescope.actions").move_selection_next, desc = "Select Next" },
-      -- { ["<c-k>"] = require("telescope.actions").move_selection_previous, desc = "Select Next" },
       {
         "<leader>fp",
         function()
@@ -16,16 +23,15 @@ return {
         desc = "Find Plugin File",
       },
     },
-  },
-  -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+    opts = {
+      defaults ={
+        mappings = {
+          i = {
+            [ "<c-j>" ] = require("telescope.actions").move_selection_next,
+            [ "<c-k>" ] = require("telescope.actions").move_selection_previous,
+          },
+        },
+      },
     },
   },
 }
