@@ -6,6 +6,8 @@ return {
       { "<leader>j", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>k", "<cmd>Telescope live_grep<cr>", desc = "Find Files" },
       -- add a keymap to browse plugin files
+      -- { ["<c-j>"] = require("telescope.actions").move_selection_next, desc = "Select Next" },
+      -- { ["<c-k>"] = require("telescope.actions").move_selection_previous, desc = "Select Next" },
       {
         "<leader>fp",
         function()
