@@ -52,6 +52,9 @@ require("lazy").setup({
 -- This module contains a number of default definitions
 local rainbow_delimiters = require("rainbow-delimiters")
 
+-- Set custom colors
+vim.cmd('highlight RainbowDelimiterYellow guifg=DarkYellow ctermfg=DarkYellow')
+
 ---@type rainbow_delimiters.config
 vim.g.rainbow_delimiters = {
   strategy = {
@@ -67,12 +70,12 @@ vim.g.rainbow_delimiters = {
     lua = 210,
   },
   highlight = {
-    "RainbowDelimiterRed",
+    -- "RainbowDelimiterRed",
     "RainbowDelimiterYellow",
-    "RainbowDelimiterBlue",
-    "RainbowDelimiterOrange",
     "RainbowDelimiterGreen",
+    "RainbowDelimiterBlue",
     "RainbowDelimiterViolet",
+    "RainbowDelimiterOrange",
     "RainbowDelimiterCyan",
   },
   blacklist = { "c", "cpp" },
