@@ -11,6 +11,7 @@
 ### High Level
 - [ ] Add search and replace across multiple files (probably plugin: nvim spectre)
 - [ ] Configure debugger (dap)
+- [x] Relative line numbers should turn to absolute when not in normal mode or windows loses focus
 
 ### Low level
 - [ ] Change tab/enter. Enter should not accept suggestion.  Tab should accept suggestion.  Arrows for scrolling, but non-arrow alternative would be ideal.
