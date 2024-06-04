@@ -2,26 +2,26 @@ return {
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
-    "L3MON4D3/LuaSnip",
+    'L3MON4D3/LuaSnip',
     keys = function()
       return {}
     end,
   },
   -- then: setup supertab in cmp
   {
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
       -- "hrsh7th/cmp-emoji",
-      "saadparwaiz1/cmp_luasnip",
+      'saadparwaiz1/cmp_luasnip',
       -- "dmitmel/cmp-cmdline-history",
-      "petertriho/cmp-git",
+      'petertriho/cmp-git',
     },
     config = function()
-      local luasnip = require("luasnip")
+      local luasnip = require('luasnip')
       local cmp = require('cmp')
 
       cmp.setup({
@@ -43,17 +43,17 @@ return {
           ['<CR>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               if luasnip.expandable() then
-                  luasnip.expand()
+                luasnip.expand()
               else
-                  cmp.confirm({
-                      select = true,
-                  })
+                cmp.confirm({
+                  select = true,
+                })
               end
             else
-                fallback()
+              fallback()
             end
           end),
-          ["<Tab>"] = cmp.mapping(function(fallback)
+          ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.locally_jumpable(1) then
@@ -61,8 +61,8 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.locally_jumpable(-1) then
@@ -70,8 +70,8 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
-          ["<C-j>"] = cmp.mapping(function(fallback)
+          end, { 'i', 's' }),
+          ['<C-j>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.locally_jumpable(1) then
@@ -79,8 +79,8 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
-          ["<C-k>"] = cmp.mapping(function(fallback)
+          end, { 'i', 's' }),
+          ['<C-k>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.locally_jumpable(-1) then
@@ -88,14 +88,14 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
+          end, { 'i', 's' }),
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
         }, {
           { name = 'buffer' },
-        })
+        }),
       })
 
       -- Set configuration for specific filetype.
@@ -104,28 +104,27 @@ return {
           { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
         }, {
           { name = 'buffer' },
-        })
+        }),
       })
 
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'buffer' }
-        }
+          { name = 'buffer' },
+        },
       })
 
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          { name = 'path' }
+          { name = 'path' },
         }, {
-          { name = 'cmdline' }
+          { name = 'cmdline' },
         }),
         -- matching = { disallow_symbol_nonprefix_matching = false }
       })
-
-    end
+    end,
   },
 }

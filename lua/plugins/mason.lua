@@ -1,10 +1,10 @@
 return {
   {
-    "williamboman/mason.nvim",
+    'williamboman/mason.nvim',
     enabled = false,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    'williamboman/mason-lspconfig.nvim',
     enabled = false,
-  }
+  },
 }
