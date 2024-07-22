@@ -7,7 +7,6 @@ return {
   end,
   keys = {
     { '<leader>xd', '<cmd>ToggleDiag<cr>', desc = 'Toggle Diagnostics' },
-    { '<leader>xv', '<Plug>(toggle-lsp-diag-vtext)', desc = 'Toggle Virtual Text' },
     { '<leader>v', '<Plug>(toggle-lsp-diag-vtext)', desc = 'Toggle Virtual Text' },
   },
 }
